@@ -1,0 +1,52 @@
+// Variables
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+$bodyfont: 'Poppins', sans-serif;
+$headingfont: 'Poppins', sans-serif;
+
+@import '~@angular/material/theming';
+
+/*Material Theme Colors*/
+
+$primary: mat-palette($mat-green, 600);
+$accent: mat-palette($mat-green, 500);
+$warn: mat-palette($mat-red, 500);
+$theme: mat-light-theme($primary, $accent, $warn);
+$background: map-get($theme, background);
+$foreground: map-get($theme, foreground);
+
+@include mat-core();
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Poppins, sans-serif'
+);
+
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);
+
+// Default Theme
+@include angular-material-theme($theme);
+
+
+/*Theme Colors*/
+
+$bodycolor: #eef5f9;
+$headingtext: #455a64;
+$bodytext: #67757c;
+$sidebar-text: #607d8b;
+$sidebar-icons: #99abb4;
+
+$themecolor: green;
+$themecolor-alt: green;
+
+$danger: #fc4b6c;
+$success: #26c6da;
+$warning: #ffb22b;
+$primary: #7460ee;
+$info: #1e88e5;
+
+$white: #ffffff;
+
+/*Extra Variable*/
+$border: rgba(120, 130, 140, 0.13);
+$radius: 4px;
