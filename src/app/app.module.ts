@@ -18,6 +18,16 @@ import { DemoMaterialModule } from './demo-material-module';
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true,
+  wheelSpeed: 2,
+  wheelPropagation: true
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,15 +40,16 @@ import { SpinnerComponent } from './shared/spinner.component';
     BrowserModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
+    PerfectScrollbarModule,
     FlexLayoutModule,
     SharedModule,
     RouterModule.forRoot(AppRoutes)
   ],
   providers: [
-    // {
-    //   provide: LocationStrategy,
-    //   useClass: PathLocationStrategy
-    // }
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
   ],
   bootstrap: [AppComponent]
 })

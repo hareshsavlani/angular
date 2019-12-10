@@ -1,6 +1,74 @@
-        
+ <!-- ============================================================== -->
+<!-- Notification - style you can find in header.scss -->
+<!-- ============================================================== -->
+<button [matMenuTriggerFor]="notification" mat-icon-button class="m-r-10">
+    <mat-icon>dashboard</mat-icon>
+    <div class="notify">
+        <span class="heartbit"></span>
+        <span class="point"></span>
+    </div>
+</button>
+<mat-menu #notification="matMenu" class="mymegamenu m-t-10">
+    <div class="mailbox">
+        <ul>
+            <li>
+                <div class="drop-title">Assigned Roles</div>
+            </li>
+            <li>
+                <div class="message-center">
+                    <perfect-scrollbar [config]="config">
+                        <!-- Message -->
+                        <a href="#" *ngFor="let notification of notifications">
+                            <div class="round {{notification.round}}">
+                                <mat-icon class="dd-icon">{{notification.icon}}</mat-icon>
+                            </div>
+                            <div class="mail-content">
+                                <h5>{{notification.title}}</h5>
+                            </div>
+                        </a>
+                    </perfect-scrollbar>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</mat-menu> 
+<button mat-icon-button>
+    <mat-icon>add_location</mat-icon>
+    <div class="notify">
+        <span class="heartbit"></span>
+        <span class="point"></span>
+    </div>
+</button>
+<small class="m-r-20">Country Name</small>
 <!-- ============================================================== -->
 <!-- Profile - style you can find in header.scss -->
 <!-- ============================================================== -->
-<button mat-icon-button class="m-r-5"> <mat-icon>power_settings_new</mat-icon> </button>
-
+<button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5 p-l-40">
+    <img src="./assets/images/user.jpg" alt="user" class="profile-pic"> 
+</button>
+<mat-menu #profile="matMenu" class="mymegamenu m-t-10">
+    <div class="mailbox">
+        <ul>
+            <li>
+                        <div class="drop-title">Assigned Roles</div>
+            </li>
+            <li>
+                <div class="message-center">
+                    <a>
+                    <div class="round round-success">
+                        <i class="{{notification.icon}}"></i>
+                    </div>
+                    <div class="mail-content">
+                        <h5>"{{notification.title}}"</h5>
+                        <span class="mail-desc">"{{notification.subject}}"</span>
+                        <span class="time">"{{notification.time}}"</span>
+                    </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <button mat-menu-item><mat-icon>account_box</mat-icon> View My Particulars </button>
+    <button mat-menu-item><mat-icon>exit_to_app</mat-icon> Sign Out </button>
+</mat-menu>

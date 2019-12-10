@@ -7,6 +7,12 @@
     <!-- ============================================================== -->
     <mat-toolbar color="primary" class="topbar">
         <!-- ============================================================== -->
+        <!-- sidebar toggle -->
+        <!-- ============================================================== -->
+        <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <!-- ============================================================== -->
         <!-- Logo - style you can find in header.scss -->
         <!-- ============================================================== -->
         <div class="navbar-header">
@@ -23,13 +29,6 @@
                  <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage">
                 </span> </a>
         </div>
-        <!-- ============================================================== -->
-        <!-- sidebar toggle -->
-        <!-- ============================================================== -->
-        
-        <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
-            <mat-icon>menu</mat-icon>
-        </button>
         <span fxFlex></span>
         <!-- ============================================================== -->
         <!-- app header component - style you can find in header.scss / header.component.ts-->
