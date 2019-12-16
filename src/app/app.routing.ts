@@ -10,8 +10,8 @@ export const AppRoutes: Routes = [
     children: [
       {
         path: '',
-         loadChildren:
-           () => import('./material-component/material.module').then(m => m.MaterialComponentsModule)
+        loadChildren:
+          './material-component/material.module#MaterialComponentsModule'
       },
     ]
   }
