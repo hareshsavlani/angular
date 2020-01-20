@@ -1,0 +1,412 @@
+<div fxLayout="row wrap">
+    <!-- Card column -->
+    <div fxFlex.gt-sm="100%">
+        <mat-card>
+            <mat-card-content>
+                <form [formGroup]="form">
+                    <mat-card-title>Employee Details</mat-card-title>
+                    <mat-card-subtitle>A selection list provides an interface for selecting values, where each list item
+                        is an option.</mat-card-subtitle>
+
+                    <div fxLayout="row wrap">
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 1</mat-label>
+                                <input matInput placeholder="Text Input 1" [formControl]="form.controls['ip1']">
+                            </mat-form-field>
+                            <mat-hint *ngIf="form.controls['ip1'].hasError('required') && form.controls['ip1'].touched"
+                                class="text-danger font-14">You must include</mat-hint>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 2</mat-label>
+                                <input matInput placeholder="Text Input 2" [formControl]="form.controls['ip2']">
+                            </mat-form-field>
+                            <mat-hint *ngIf="form.controls['ip2'].hasError('required') && form.controls['ip2'].touched"
+                                class="text-danger font-14">You must include</mat-hint>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 3</mat-label>
+                                <input matInput placeholder="Text Input 2" [formControl]="form.controls['ip3']">
+                            </mat-form-field>
+                            <mat-hint *ngIf="form.controls['ip3'].hasError('required') && form.controls['ip3'].touched"
+                                class="text-danger font-14">You must include</mat-hint>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 4</mat-label>
+                                <input matInput placeholder="Text Input 4" [formControl]="form.controls['ip4']">
+                            </mat-form-field>
+                            <mat-hint *ngIf="form.controls['ip4'].hasError('required') && form.controls['ip4'].touched"
+                                class="text-danger font-14">You must include</mat-hint>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="picker1" placeholder="Choose a date1"
+                                    [formControl]="form.controls['date1']">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker touchUi="true" #picker1></mat-datepicker>
+                            </mat-form-field>
+                            <mat-hint
+                                *ngIf="form.controls['date1'].hasError('required') && form.controls['date1'].touched"
+                                class="text-danger font-14">You must include</mat-hint>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="picker2" placeholder="Choose a date2"
+                                    [formControl]="form.controls['date2']">
+                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                <mat-datepicker touchUi="true" #picker2></mat-datepicker>
+                            </mat-form-field>
+                            <mat-hint
+                                *ngIf="form.controls['date2'].hasError('required') && form.controls['date2'].touched"
+                                class="text-danger font-14">You must include</mat-hint>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl1']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl1'].valid && form.controls['myControl1'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl2']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl2'].valid && form.controls['myControl2'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl3']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl3'].valid && form.controls['myControl3'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-checkbox class="example-margin" [formControl]="form.controls['checkbox']">Check Box
+                            </mat-checkbox>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl4']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl4'].valid && form.controls['myControl4'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <button mat-raised-button color="primary">Children Info</button>
+                        </div>
+
+                    </div>
+
+                    <br><br>
+
+                    <mat-card-title>Leave Profile <small class="text-grey">111111</small></mat-card-title>
+                    <div fxLayout="row wrap">
+                        <div class="p-10" fxFlex.gt-sm="80" fxFlex.gt-xs="80" fxFlex="100">
+                            <mat-card-subtitle>A selection list provides an interface for selecting values, where each
+                                list item is an option.</mat-card-subtitle>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="20" fxFlex.gt-xs="20" fxFlex="100">
+                            <button mat-raised-button color="primary">Children Info</button>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="70" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 1</mat-label>
+                                <input matInput placeholder="Text Input 1" [formControl]="form.controls['ip1']">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="30" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl1']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl1'].valid && form.controls['myControl1'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="picker3" placeholder="Choose a date1"
+                                    [formControl]="form.controls['date1']">
+                                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                                <mat-datepicker touchUi="true" #picker3></mat-datepicker>
+                            </mat-form-field>
+                            <mat-hint
+                                *ngIf="form.controls['date1'].hasError('required') && form.controls['date1'].touched"
+                                class="text-danger font-14">You must include</mat-hint>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="picker4" placeholder="Choose a date2"
+                                    [formControl]="form.controls['date2']">
+                                <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                                <mat-datepicker touchUi="true" #picker4></mat-datepicker>
+                            </mat-form-field>
+                            <mat-hint
+                                *ngIf="form.controls['date2'].hasError('required') && form.controls['date2'].touched"
+                                class="text-danger font-14">You must include</mat-hint>
+                        </div>
+
+
+                        <div class="p-10" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 1</mat-label>
+                                <input matInput [disabled]="true" placeholder="Text Input 1"
+                                    [formControl]="form.controls['ip1']">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="30" fxFlex.gt-xs="100" fxFlex="100">
+                            Employee Work Days
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="10" fxFlex.gt-xs="10" fxFlex="100">
+                            <mat-checkbox class="example-margin" [formControl]="form.controls['checkbox']">Mon
+                            </mat-checkbox>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="10" fxFlex.gt-xs="10" fxFlex="100">
+                            <mat-checkbox class="example-margin" [formControl]="form.controls['checkbox']">Tue
+                            </mat-checkbox>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="10" fxFlex.gt-xs="10" fxFlex="100">
+                            <mat-checkbox class="example-margin" [formControl]="form.controls['checkbox']">Wed
+                            </mat-checkbox>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="10" fxFlex.gt-xs="10" fxFlex="100">
+                            <mat-checkbox class="example-margin" [formControl]="form.controls['checkbox']">Thu
+                            </mat-checkbox>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="10" fxFlex.gt-xs="10" fxFlex="100">
+                            <mat-checkbox class="example-margin" [formControl]="form.controls['checkbox']">Fri
+                            </mat-checkbox>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="10" fxFlex.gt-xs="10" fxFlex="100">
+                            <mat-checkbox class="example-margin" [formControl]="form.controls['checkbox']">Sat
+                            </mat-checkbox>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="10" fxFlex.gt-xs="10" fxFlex="100">
+                            <mat-checkbox class="example-margin" [formControl]="form.controls['checkbox']">Sun
+                            </mat-checkbox>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl2']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl2'].valid && form.controls['myControl2'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl1']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl1'].valid && form.controls['myControl1'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <button mat-raised-button color="primary">Children Info</button>
+                        </div>
+
+                    </div>
+
+                    <br><br>
+
+                    <div fxLayout="row wrap">
+                        <div class="p-10" fxFlex.gt-sm="80" fxFlex.gt-xs="80" fxFlex="100">
+                            <mat-card-title>Active Leave Profile</mat-card-title>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="20" fxFlex.gt-xs="20" fxFlex="100">
+                            <button mat-raised-button color="primary">Children Info</button>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="80" fxFlex.gt-xs="80" fxFlex="100">
+                            <mat-card-subtitle>A selection list provides an interface for selecting values, where each
+                                list item is an option.</mat-card-subtitle>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="20" fxFlex.gt-xs="20" fxFlex="100">
+                            <button mat-raised-button color="primary">Children Info</button>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="70" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 1</mat-label>
+                                <input matInput placeholder="Text Input 1" [formControl]="form.controls['ip1']">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="30" fxFlex.gt-xs="20" fxFlex="100">
+                            <button mat-raised-button color="primary">Children Info</button>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl1']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl1'].valid && form.controls['myControl1'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl1']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl1'].valid && form.controls['myControl1'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="40" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 1</mat-label>
+                                <input matInput placeholder="Text Input 1" [formControl]="form.controls['ip1']">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="40" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-select disableOptionCentering placeholder="Select an option"
+                                    [formControl]="form.controls['myControl1']">
+                                    <mat-option *ngFor="let option of options1" [value]="option.id">
+                                        {{option.value}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <small *ngIf="!form.controls['myControl1'].valid && form.controls['myControl1'].touched"
+                                class="text-danger font-14">You must select</small>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="20" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 1</mat-label>
+                                <input matInput placeholder="Text Input 1" [formControl]="form.controls['ip1']">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 1</mat-label>
+                                <input matInput [disabled]="true" placeholder="Text Input 1"
+                                    [formControl]="form.controls['ip1']">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="picker5" placeholder="Choose a date2"
+                                    [formControl]="form.controls['date2']">
+                                <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                                <mat-datepicker touchUi="true" #picker5></mat-datepicker>
+                            </mat-form-field>
+                            <mat-hint
+                                *ngIf="form.controls['date2'].hasError('required') && form.controls['date2'].touched"
+                                class="text-danger font-14">You must include</mat-hint>
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <mat-card-title>Approval Matrix Details</mat-card-title>
+                    <mat-card-subtitle>A selection list provides an interface for selecting values, where each list
+                        item is an option.</mat-card-subtitle>
+
+                    <div fxLayout="row wrap">
+                        <div class="p-10" fxFlex.gt-sm="30" fxFlex.gt-xs="20" fxFlex="100">
+                            Primary Approver
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="70" fxFlex.gt-xs="20" fxFlex="100">
+                            <button mat-raised-button color="primary">Children Info</button>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="60" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-form-field>
+                                <mat-label>Text Input 1</mat-label>
+                                <input matInput placeholder="Text Input 1" [formControl]="form.controls['ip1']">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="p-10" fxFlex.gt-sm="40" fxFlex.gt-xs="20" fxFlex="100">
+                            <button mat-raised-button color="primary">Children Info</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>
